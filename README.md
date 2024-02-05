@@ -1,2 +1,34 @@
-# conel-assignment-5-project-1
+# CONEL Assignment task 5 Project 1
 Assignment for beginner Python class
+
+## Project requirements
+>Project 1: Patient Registration System
+>
+>Create a patient registration system that allows users to add new patients to a record system. The system should prompt the user for patient details such as name, age, gender, and contact number. All patient records should be stored in a file. Implement functions for adding patients and displaying patient information. Test the system with sample data.
+>
+>Documentation Requirements:
+>1. README Files:
+>    - Create a separate README file for each project. 
+>    - Include a brief project overview and purpose.
+>    - Clearly list the functionalities of the project.
+>    - Provide step-by-step instructions on how to run the Python code.
+>    - Mention any external libraries or dependencies required.
+>    - Include sample input and expected output.
+>1. Code Comments:
+>    - Include comments throughout your code to explain the purpose of functions, loops, and any complex logic.
+>    - Use meaningful variable and function names to enhance code readability.
+>1. Testing:
+>    - Describe the testing process for your projects.
+>    - Provide examples of test cases and their expected outcomes.
+
+## Implementation notes and dependencies
+We will use the library [Rich](https://github.com/Textualize/rich) for outputting to the console for a nicer UI.
+
+Because the project requires that the patient data be stored in a file, we will use the inbuilt library `csv` to write to a text file in a CSV format. The patient data will be stored in a file called `patient_data.csv` in the project root directory, which will be created on the first run of the script.
+
+For testing requirements, we will use the inbuilt library `unittest`.
+
+The requirements are included in the `requirements.txt` file, you will use this file when setting up your Python environment.
+
+## Sample run
+Some example here, need to implement first...
