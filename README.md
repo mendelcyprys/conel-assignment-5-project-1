@@ -26,6 +26,8 @@ We will use the library [Rich](https://github.com/Textualize/rich) for outputtin
 
 Because the project requires that the patient data be stored in a file, we will use the inbuilt library `csv` to write to a text file in a CSV format. The patient data will be stored in a file called `patient_data.csv` in the project root directory, which will be created on the first run of the script.
 
+For reading the `.env` configuration file, we use `python-dotenv`.
+
 For testing requirements, we will use the inbuilt library `unittest`.
 
 The requirements are included in the `requirements.txt` file, you will use this file when setting up your Python environment.
