@@ -11,7 +11,7 @@ def clear_console() -> None:
     # I'm assuming this script is being run on Windows
     os.system('cls')
 
-def print_welcome() -> None:
+def print_welcome_message() -> None:
     """Prints a welcome message to the console"""
     clear_console()
     console.rule(
@@ -39,6 +39,25 @@ def parse_data(data_path: str) -> list[Patient]:
         # if file isn't found, create it
         open(data_path, 'x')
     return patient_list
+
+def write_data(patient_list: list[Patient], data_path: str) -> None:
+    """Writes the data back to the CSV file"""
+    try:
+        with open(data_path, 'w', newline='') as f:
+            writer = csv.writer(f)
+            for patient in patient_list:
+                # append the line to the patient list
+                writer.writerow(
+                    [
+                        patient.name,
+                        str(patient.age),
+                        patient.gender.name,
+                        patient.contact_number,
+                    ]
+                )
+    except FileNotFoundError:
+        # if file isn't found, create it
+        open(data_path, 'x')
 
 def display_menu() -> None:
     console.print("[yellow]Menu choices:")
@@ -91,3 +110,7 @@ def show_patients(patient_list: list[Patient]):
         )
     console.print(table)
     console.print()
+
+def display_exit_message() -> None:
+    console.print("[green]\nData saved to file")
+    console.print("[green]Goodbye!\n")
