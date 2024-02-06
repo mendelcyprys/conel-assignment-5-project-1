@@ -4,6 +4,7 @@ from .patient import Gender, Patient
 from rich.prompt import Prompt, IntPrompt
 from rich.table import Table
 from rich.console import Console
+from rich.panel import Panel
 
 console = Console()
 
@@ -11,7 +12,7 @@ def clear_console() -> None:
     # I'm assuming this script is being run on Windows
     os.system('cls')
 
-def print_welcome_message() -> None:
+def display_welcome_message() -> None:
     """Prints a welcome message to the console"""
     clear_console()
     console.rule(
@@ -60,10 +61,15 @@ def write_data(patient_list: list[Patient], data_path: str) -> None:
         open(data_path, 'x')
 
 def display_menu() -> None:
-    console.print("[yellow]Menu choices:")
-    console.print("[bold green]\t1. Create a new patient entry")
-    console.print("[bold blue]\t2. View the patient entries")
-    console.print("[bold red]\t3. Exit")
+    console.print(
+        Panel(
+            "[bold green]1. Create a new patient entry\n"
+            "[bold blue]2. View the patient entries\n"
+            "[bold red]3. Exit",
+            title="[yellow]Menu choices",
+            width=60,
+        )
+    )
 
 def get_menu_response() -> int:
     display_menu()

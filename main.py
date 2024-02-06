@@ -6,7 +6,7 @@ config = dotenv_values(".env")
 PATIENT_DATA_CSV_PATH = config['PATIENT_DATA_CSV_PATH']
 
 def main():
-    functions.print_welcome_message()
+    functions.display_welcome_message()
     # parse the CSV file
     patient_list = functions.parse_data(PATIENT_DATA_CSV_PATH)
     # loop displaying the menu and getting user response
