@@ -78,3 +78,23 @@ mv .env-example .env
 To test that the installation has worked, you can now try to run the unit tests
 
 ```
+python -m unittest discover
+```
+
+You can run the program by running
+
+```
+python main.py
+```
+
+Finally you can deactivate the virtual environment by running
+
+```
+deactivate
+```
+
+## Sample run
+
+![First image](/docs/images/1.png)
+
+![Second image](/docs/images/2.png)
