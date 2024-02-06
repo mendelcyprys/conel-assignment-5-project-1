@@ -32,7 +32,7 @@ For testing requirements, we will use the inbuilt library `unittest`.
 
 The requirements are included in the `requirements.txt` file, you will use this file when setting up your Python environment.
 
-## Instalation instructions
+## Installation instructions
 We recommend you use Windows PowerShell so that the instructions work without changes.
 
 Assuming you have git installed you can clone the project by running
