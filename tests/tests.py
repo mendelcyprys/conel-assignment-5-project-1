@@ -25,4 +25,4 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(patients_list[0].gender.name, 'Male')
         # etc.
     
-    #can write other methods too to test other things
+    # can write other methods too to test other things

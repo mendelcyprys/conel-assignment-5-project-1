@@ -43,22 +43,18 @@ def parse_data(data_path: str) -> list[Patient]:
 
 def write_data(patient_list: list[Patient], data_path: str) -> None:
     """Writes the data back to the CSV file"""
-    try:
-        with open(data_path, 'w', newline='') as f:
-            writer = csv.writer(f)
-            for patient in patient_list:
-                # append the line to the patient list
-                writer.writerow(
-                    [
-                        patient.name,
-                        str(patient.age),
-                        patient.gender.name,
-                        patient.contact_number,
-                    ]
-                )
-    except FileNotFoundError:
-        # if file isn't found, create it
-        open(data_path, 'x')
+    with open(data_path, 'w', newline='') as f:
+        writer = csv.writer(f)
+        for patient in patient_list:
+            # append the line to the patient list
+            writer.writerow(
+                [
+                    patient.name,
+                    str(patient.age),
+                    patient.gender.name,
+                    patient.contact_number,
+                ]
+            )
 
 def display_menu() -> None:
     console.print(
