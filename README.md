@@ -32,5 +32,7 @@ For testing requirements, we will use the inbuilt library `unittest`.
 
 The requirements are included in the `requirements.txt` file, you will use this file when setting up your Python environment.
 
-## Sample run
-Some example here, need to implement first...
+## Instalation instructions
+Assuming you have git installed you can clone the project by running
+
+```git clone https://github.com/mendelcyprys/conel-assignment-5-project-1.git``` 
