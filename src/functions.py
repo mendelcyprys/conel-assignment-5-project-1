@@ -1,7 +1,8 @@
 import csv
 import os
 from .patient import Gender, Patient
-from rich.prompt import Prompt
+from rich.prompt import Prompt, IntPrompt
+from rich.table import Table
 from rich.console import Console
 
 console = Console()
@@ -41,7 +42,7 @@ def parse_data(data_path: str) -> list[Patient]:
 
 def display_menu() -> None:
     console.print("[yellow]Menu choices:")
-    console.print("[bold green]\t1. Create a patient entry")
+    console.print("[bold green]\t1. Create a new patient entry")
     console.print("[bold blue]\t2. View the patient entries")
     console.print("[bold red]\t3. Exit")
 
@@ -52,11 +53,41 @@ def get_menu_response() -> int:
     )
 
 def new_patient() -> Patient:
-    # TO DO
-    # Implement the prompts to get the patient information
-    return Patient("", 0, Gender.Other, "")
+    console.print()
+    new_patient = dict()
+    new_patient["name"] = Prompt.ask("Enter the patient's name").strip()
+    while new_patient["name"] == "":
+        console.print("[red]Please enter a valid non empty name")
+        new_patient["name"] = Prompt.ask("Enter the patient's name").strip()
+    new_patient["age"] = IntPrompt.ask("Enter the patient's age")
+    while new_patient["age"] < 0:
+        console.print("[red]Please enter a valid non negative integer number")
+        new_patient["age"] = IntPrompt.ask("Enter the patient's age")
+    new_patient["gender"] = Gender[
+        Prompt.ask(
+            "Enter the patient's gender",
+            choices=['Male', 'Female', 'Other']
+        ).strip()
+    ]
+    new_patient["contact_number"] = Prompt.ask("Enter the patient's contact number").strip()
+    # perhaps we can add sometime a regex check on the contact number format
+    # but for now I will accept any string
+    console.print()
+    return Patient(**new_patient)
 
 def show_patients(patient_list: list[Patient]):
-    console.print(patient_list)
-    # TO DO
-    # Print a table nicely
+    console.print()
+    table = Table(title="Patient data")
+    table.add_column("Name", style="cyan", no_wrap=True)
+    table.add_column("Age", justify="right", style="magenta")
+    table.add_column("Gender", style="green")
+    table.add_column("Contact Number", justify="right", style="cyan")
+    for patient in patient_list:
+        table.add_row(
+            patient.name,
+            str(patient.age),
+            patient.gender.name,
+            patient.contact_number,
+        )
+    console.print(table)
+    console.print()
