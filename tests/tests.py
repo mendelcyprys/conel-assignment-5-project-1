@@ -19,5 +19,10 @@ class TestFunctions(unittest.TestCase):
                 "Alice Turner,32,Female,06543210987\n"
             )
 
-    def test_upper(self):
-        self.assertEqual('foo'.upper(), 'FOO')
+    def test_parse_data(self):
+        patients_list = functions.parse_data(TESTS_PATIENT_DATA_CSV_PATH)
+        self.assertEqual(patients_list[0].name, 'John Smith')
+        self.assertEqual(patients_list[0].gender.name, 'Male')
+        # etc.
+    
+    #can write other methods too to test other things
