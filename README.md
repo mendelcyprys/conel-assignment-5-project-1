@@ -33,8 +33,48 @@ For testing requirements, we will use the inbuilt library `unittest`.
 The requirements are included in the `requirements.txt` file, you will use this file when setting up your Python environment.
 
 ## Instalation instructions
+We recommend you use Windows PowerShell so that the instructions work without changes.
+
 Assuming you have git installed you can clone the project by running
 
 ```
 git clone https://github.com/mendelcyprys/conel-assignment-5-project-1.git
 ``` 
+
+Otherwise you can download the files from github.
+
+Then move into the created directory by running
+
+```
+cd conel-assignment-5-project-1
+```
+
+Then create a virtual environment by running
+
+```
+python -m venv .venv
+```
+
+Note that this step isn't crucial, and you may need to install `venv` or use a different executable name like `python3`.
+
+If you have installed the virtual environment from the previous step, you will need to activate it in the console by running (for Windows PowerShell)
+
+```
+.venv/Scripts/Activate.ps1
+```
+
+Now install the project requirements by running
+
+```
+pip install -r requirements.txt
+```
+
+Rename `.env-example` to `.env` by running
+
+```
+mv .env-example .env
+```
+
+To test that the installation has worked, you can now try to run the unit tests
+
+```
