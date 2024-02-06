@@ -1,4 +1,5 @@
 /patient_data.csv
+/tests/tests_patient_data.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
