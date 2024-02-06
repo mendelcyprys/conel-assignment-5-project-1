@@ -35,4 +35,6 @@ The requirements are included in the `requirements.txt` file, you will use this 
 ## Instalation instructions
 Assuming you have git installed you can clone the project by running
 
-```git clone https://github.com/mendelcyprys/conel-assignment-5-project-1.git``` 
+```
+git clone https://github.com/mendelcyprys/conel-assignment-5-project-1.git
+``` 
